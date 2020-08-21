@@ -3,6 +3,7 @@ import "../App.css";
 import Home from "./Home";
 import OrderForm from "./OrderForm";
 import { Route, Link } from "react-router-dom";
+import styled from "styled-components";
 
 const App = () => {
   return (
@@ -10,14 +11,17 @@ const App = () => {
       <div className="App">
         <nav className="home-header">
           <h1>Lambda Eats</h1>
-          <Link className="link" to="/">
-            <Link className="link" to="/pizza">
-              Order Here
+          <div>
+            <Link className="link" to="/">
+              Home
             </Link>
-            Home
+          </div>
+          <Link className="link" to="/pizza">
+            Order Here 
           </Link>
         </nav>
         <Route exact path="/" component={Home} />
+
         <Route path="/pizza" component={OrderForm} />
       </div>
     </>

@@ -17,6 +17,7 @@ const pizzaSchema = yup.object().shape({
   pineapple: yup.boolean().oneOf([true, false]),
   extraCheese: yup.boolean().oneOf([true, false]),
   pepperoni: yup.boolean().oneOf([true, false]),
+  specialInstructions: yup.string(),
 });
 
 const OrderForm = () => {
@@ -28,6 +29,7 @@ const OrderForm = () => {
     pineapple: false,
     extraCheese: false,
     pepperoni: false,
+    specialInstructions: "",
   });
   console.log(pizzaOrder);
 
@@ -64,6 +66,7 @@ const OrderForm = () => {
   };
 
   const orderSubmit = (e) => {
+    //Submit to database
     e.preventDefault();
     console.log("form submitted!");
     axios
@@ -161,6 +164,17 @@ const OrderForm = () => {
                 onChange={changeHandler}
               />
               pepperoni
+            </label>
+          </div>
+          <div className="special-instructions">
+            <h3> Special Instructions: </h3>
+            <label htmlFor="specialInstructions">
+              <textarea
+                name="specialInstructions"
+                placeholder="special instructions"
+                value={pizzaOrder.specialInstructions}
+                onChange={changeHandler}
+              />
             </label>
           </div>
           <div className="submit-button">
