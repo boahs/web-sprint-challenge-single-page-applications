@@ -68,7 +68,7 @@ const OrderForm = () => {
   const orderSubmit = (e) => {
     //Submit to database
     e.preventDefault();
-    console.log("form submitted!");
+    console.log("order submitted!");
     axios
       .post("https://reqres.in/api/users", pizzaOrder)
       .then((response) => {
