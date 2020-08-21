@@ -10,6 +10,12 @@ describe("Can type into fields", () => {
     cy.get('input[name="name"]')
       .type("testing")
       .should("have.value", "testing");
+    cy.get('input[name="email"]')
+      .type("testing")
+      .should("have.value", "testing");
+    cy.get('[name="specialInstructions"]')
+      .type("testing")
+      .should("have.value", "testing");
   });
 });
 
