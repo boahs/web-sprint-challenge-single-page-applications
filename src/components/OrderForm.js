@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import * as yup from "yup";
 import axios from "axios";
-import styled from "styled-components";
 
 const pizzaSchema = yup.object().shape({
   name: yup
@@ -68,9 +67,9 @@ const OrderForm = () => {
     console.log("order submitted!");
     axios
       .post("https://reqres.in/api/users", pizzaOrder)
-      .then((response) => {
-        setPizzaOrder([response.data]);
-        console.log(response.data);
+      .then((res) => {
+        setPizzaOrder([res.data]);
+        console.log(res);
       })
       .catch((error) => console.log(error));
   };
