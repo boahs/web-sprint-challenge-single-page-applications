@@ -68,7 +68,7 @@ const OrderForm = () => {
     axios
       .post("https://reqres.in/api/users", pizzaOrder)
       .then((res) => {
-        setPizzaOrder([res.data]);
+        setPizzaOrder([res]);
         console.log(res);
       })
       .catch((error) => console.log(error));
