@@ -58,11 +58,8 @@ const OrderForm = () => {
       });
   };
   const changeHandler = (e) => {
-    e.persist();
-    validate(e);
-    let value =
-      e.target.type === "checkbox" ? e.target.checked : e.target.value;
-    setPizzaOrder({ [e.target.name]: value });
+    const { name, checked } = e.target;
+    setPizzaOrder(name, checked);
   };
 
   const orderSubmit = (e) => {

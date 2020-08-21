@@ -18,3 +18,9 @@ describe("Can submit new order", () => {
     cy.get("form").submit();
   });
 });
+
+describe("Can select multi checkbox", () => {
+  it("Can check many boxes", () => {
+    cy.get('input[type="checkbox"]').first().check();
+  });
+});
